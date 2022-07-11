@@ -1,6 +1,6 @@
 ---
 id: quicknode
-title: Using QuickNode
+title: Deploy a Smart Contract on Polygon using Brownie and QuickNode
 sidebar_label: Using QuickNode
 description:  Deploy Smart Contracts using Brownie and Quicknode.
 keywords:
@@ -8,10 +8,6 @@ keywords:
   - matic
 image: https://matic.network/banners/matic-network-16x9.png
 ---
-
-# 🐣 Deploy a Smart Contract on Polygon using Brownie and QuickNode
-
-_Estimated time to complete this guide: \~10 minutes_
 
 Python is one of the most versatile programming languages; from researchers running their test models to developers using it in heavy production environments, it has use cases in every possible technical field. This guide will walk you through the process of deploying smart contracts using [Brownie](https://eth-brownie.readthedocs.io/en/latest/index.html#brownie), a Python-based tool used to write and deploy smart contracts, and [QuickNode](https://www.quicknode.com/chains/matic?utm_source=polygon_docs&utm_campaign=ploygon_docs_contract_guide)
 
@@ -25,21 +21,20 @@ Python is one of the most versatile programming languages; from researchers runn
 
 -   Command-line.
 
--   That violet love for Polygon and brownies.
 
 ## What is Brownie?
 -----------------
 
 Smart contract development is majorly dominated by JavaScript-based libraries like [web3.js](https://web3js.readthedocs.io/), [ethers.js](https://docs.ethers.io/), [Truffle](https://www.trufflesuite.com/docs/truffle/overview), and [Hardhat](https://hardhat.org/). Python is a versatile, highly used language and can also be used for smart contracts/web3 development; [web3.py](https://web3py.readthedocs.io/en/stable/) is a compelling Python library that fulfills web3 needs. Brownie framework is built on top of web3.py.
 
-Brownies are small rectangular confectionary items loved by everyone, but the [Brownie](https://eth-brownie.readthedocs.io/en/latest/index.html#brownie) we are talking about today is a Python-based framework to develop and test smart contracts. Brownie has support for both Solidity and Vyper contracts, and it even provides contract testing via [pytest](https://github.com/pytest-dev/pytest).
+[Brownie](https://eth-brownie.readthedocs.io/en/latest/index.html#brownie) is a Python-based framework to develop and test smart contracts. Brownie has support for both Solidity and Vyper contracts, and it even provides contract testing via [pytest](https://github.com/pytest-dev/pytest).
 
 To demonstrate the process of writing and deploying a smart contract with Brownie, we will use [Brownie-mixes](https://github.com/brownie-mix) which are template projects. Specifically, we will use a [token mix](https://github.com/brownie-mix/token-mix), which is a template of the ERC-20 implementation.
 
 ## Step 1: Installing dependencies
 -----------------------
 
-Brownie is built on top of python3, so we need it installed to work with brownie; let us check if we have python3 installed on our system. To do so, type the following in your terminal/cmd:
+Brownie is built on top of python3, so we need it installed to work with Brownie; let us check if we have python3 installed on our system. To do so, type the following in your terminal/cmd:
 
 ```
 python3 -V
@@ -47,7 +42,7 @@ python3 -V
 
 This should return the version of python3 installed. If not installed, download and install it from the official [python website](https://www.python.org/downloads/).
 
-Let us make a project directory before installing brownie, and make that project directory our current working directory:
+Let us make a project directory before installing Brownie, and make that project directory our current working directory:
 
 ```
 mkdir brownieDemo
@@ -59,7 +54,7 @@ Now that you have installed python3 on your system, let us install brownie using
 ```
 pip3 install eth-brownie
 ```
-***If the install fails, you can use the following command for better luck***
+***If the install fails, you can use the following command istead: ***
 
 ```
 sudo pip3 install eth-brownie
@@ -79,7 +74,7 @@ This will create a new directory token/ in our brownieDemo directory.
 
 
 ### File structure
-First of all, cd into the _token_ directory:
+First of all, move to the _token_ directory:
 
 ```
 cd token
@@ -96,7 +91,7 @@ The contract is an ERC-20 contract; you can learn more about the ERC-20 standard
 
 QuickNode has a global network of Polygon Mainnet and Mumbai testnet nodes, they also run a [free public Polygon RPC](https://docs.polygon.technology/docs/develop/network-details/network/#:~:text=https%3A//rpc%2Dmainnet.matic.quiknode.pro) but if you get rate limited you can sign up for a [free trial node from QuickNode](https://www.quicknode.com/chains/matic?utm_source=polygon_docs&utm_campaign=ploygon_docs_contract_guide).
 
-![](https://lh6.googleusercontent.com/vEAp28OLizS-ZBoYU1yWthHalH0xbrgatZ1ynyA1H4y2tW-x1EHC97qk5RkHatq6tO2anLAC-ch4mfs4am2rf1zaMO5BNEAtL3anqL4UQVH5ebpQOKyItYLm4slWIurR9iznXkly=s1600)
+![img](/img/quicknode/http_URL.png)
 
 Copy the HTTP URL, which will be needed in the next step.
 
@@ -124,7 +119,11 @@ This will generate an account along with a mnemonic phrase, save it offline. The
 
 ![](https://lh6.googleusercontent.com/a6n4IL_G4oenKG5WZYu9xTmSNLqa1ixlRGJpksoFjg5KIF2Z-lka_6pLufLgZGl9yK-wSvwDe5iCCJj1D2hCaPIkQU6nsKiAJg_AKw3jylndBd8AfDtvDstrehG8u3hgdm-KVCjK)
 
-> **Note**: Mnemonic phrases can be used to recover an account or import the account to other [non-custodial wallets](https://www.quicknode.com/guides/web3-sdks/how-to-do-a-non-custodial-transaction-with-quicknode). The account you see in the image above was just created for this guide.
+:::note
+
+Mnemonic phrases can be used to recover an account or import the account to other [non-custodial wallets](https://www.quicknode.com/guides/web3-sdks/how-to-do-a-non-custodial-transaction-with-quicknode). The account you see in the image above was just created for this guide.
+
+:::
 
 Copy the account address so that we can get some test ETH, which will be required to deploy our contract.
 
@@ -133,7 +132,7 @@ Copy the account address so that we can get some test ETH, which will be require
 
 We will need some test MATICs to pay for gas fees to deploy the smart contract.
 
-Copy your address of the account which we generated in the last step, paste it into the address field of [Polygon faucet](https://faucet.polygon.technology/), and click on submit. The faucet will send you 0.1 test MATIC.
+Copy your address of the account which we generated in the last step, paste it into the address field of [Polygon faucet](https://faucet.polygon.technology/), and click on submit. The faucet will send you 0.2 test MATIC.
 
 ![](https://lh6.googleusercontent.com/kq173aYK_XB8DwuZjXXp2sot9X4enx9WXo-Xt8O93S-GohO5kx9p1iI2JQzL9wdAtiTrWfjiEodAsI_vcD1m1dUvp6koTfrKvnP4gOymP-JSDYpHVJKjWQXQ0ePNTj1MmEAJQ8Wo=s1600)
 
@@ -164,11 +163,11 @@ def main():
 
 Changes in the token.py file:
 
-Line 7: We added this line to import testac account which we created earlier, and storing it in **acct** variable.
+Line 7: We added this line to import testac account which we created earlier, and stored it in **acct** variable.
 
 Line 8: On this line we edited 'From': part to have our acct variable.
 
-FINALLY, now we will deploy our contract:
+Finally, now we will deploy our contract:
 
 ```
 brownie run token.py --network matic_mumbai
@@ -184,6 +183,10 @@ You can check out the deployed contract by copy-pasting the contract address at 
 
 So this is how contracts are deployed Polygon using Brownie and QuickNode.
 
-QuickNode just like Polygon has always had an education first approach they put out regular developer [guides](https://www.quicknode.com/guides?utm_source=polygon_docs&utm_campaign=ploygon_docs_contract_guide), [docs](https://www.quicknode.com/docs/polygon?utm_source=polygon_docs&utm_campaign=ploygon_docs_contract_guide), [tutorial videos](https://www.youtube.com/channel/UC3lhedwc0EISreYiYtQ-Gjg/videos) and have a [community of #web3 developers](https://discord.gg/DkdgEqE) who are eager to help eachother.
+QuickNode, just like Polygon, has always had an education-first approach providing developer [guides](https://www.quicknode.com/guides?utm_source=polygon_docs&utm_campaign=ploygon_docs_contract_guide), [docs](https://www.quicknode.com/docs/polygon?utm_source=polygon_docs&utm_campaign=ploygon_docs_contract_guide), [tutorial videos](https://www.youtube.com/channel/UC3lhedwc0EISreYiYtQ-Gjg/videos) and a [community of #web3 developers](https://discord.gg/DkdgEqE) who are eager to help each other.
 
-We hope this guide was helpful. We'll be happy to hear from you. DM us or tag us on Twitter [@QuickNode](https://twitter.com/QuickNode).
+:::tip
+
+To contact the Quicknode team, send them a message or tag them on Twitter [@QuickNode](https://twitter.com/QuickNode).
+
+:::
