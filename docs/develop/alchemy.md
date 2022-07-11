@@ -1,6 +1,6 @@
 ---
 id: alchemy
-title: Using Alchemy
+title: Create a Smart Contract using Alchemy
 sidebar_label: Using Alchemy
 description:  Guide to deploy smart contracts using Alchemy.
 keywords:
@@ -8,8 +8,6 @@ keywords:
   - matic
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
-
-# Create a Smart Contract using Alchemy
 
 This tutorial is for developers who are either new to Ethereum blockchain development or want to understand the fundamentals of deploying and interacting with smart contracts. It will walk through creating and deploying a smart contract on the Polygon Mumbai test network using a virtual wallet ([Metamask](https://metamask.io)), [Solidity](https://docs.soliditylang.org/en/v0.8.0/), [Hardhat](https://hardhat.org), and [Alchemy](https://alchemy.com/?a=polygon-docs).
 
@@ -25,6 +23,12 @@ If you have questions or concerns, please reach out to the [official Alchemy Dis
 
 There are several ways to make requests to the Polygon PoS chain. Rather than running your own node, you will use a free account on Alchemy's developer platform and interact with the Alchemy Polygon PoS API to communicate with the Polygon PoS chain. The platform includes developer tooling to monitor requests and data analytics that demonstrate what happens under the hood during smart contract deployment. If you don’t already have an Alchemy account, start by signing up for free [here](https://alchemy.com/?a=polygon-docs).
 
+:::note
+
+After creating your account, you have the option of immediately creating your first app before reaching the dashboard.
+
+:::
+
 ### Step 2: Create your app (and API key)
 
 After successfully creating an Alchemy account, you will need to generate an API key by creating an app. This authenticates the requests made to the Polygon Mumbai testnet. 
@@ -36,12 +40,6 @@ To generate a new API key, navigate to the "Apps" tab on the Alchemy dashboard n
 Name your new app “Hello World”, offer a short description, select "Polygon" for the chain, and choose “Polygon Mumbai” for your network.
 
 Finally, click on “Create app”. Your new app should appear in the table below.
-
-:::note
-
-After you create your account, Alchemy lets you start creating your first app before actually reaching the dashboard. You can start from there or go ahead and skip it.  
-
-:::
 
 ### Step 3: Create a wallet address
 
@@ -189,6 +187,12 @@ mkdir scripts
 ### Step 10: Write our contract
 
 Open up the hello-world project in your favorite editor, such as [VSCode](https://code.visualstudio.com). Smart contracts are written in a language called Solidity which is what we will use to write our HelloWorld.sol smart contract.‌
+
+:::tip
+
+For more information about Solidity, please visit [our guide](../home/blockchain-basics/basics-solidity).
+
+:::
 
 1. Navigate to the “contracts” folder and create a new file called `HelloWorld.sol`
 2. Below is a sample Hello World smart contract from the [Ethereum Foundation](https://ethereum.org/en/) that we will be using for this tutorial. Copy and paste in the contents below into your `HelloWorld.sol` file, and be sure to read the comments to understand what this contract does:
