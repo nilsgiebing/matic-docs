@@ -67,6 +67,7 @@ You can download and create a Metamask account for free [here](https://metamask.
 
 In order to deploy your smart contract to the test network, you need to obtain a few testnet tokens. To get testnet tokens, visit the [Polygon Mumbai Faucet](https://faucet.polygon.technology/), select "Mumbai", choose "MATIC Token", and enter your Polygon wallet address, then click “Submit.” It may take some time to receive your testnet tokens due to network traffic. 
 > At the time of writing, it took around 30 minutes.
+
 You will see the testnet tokens in your MetaMask account soon after.
 
 ### Step 5: Check your Balance
