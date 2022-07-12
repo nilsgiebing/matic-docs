@@ -47,6 +47,34 @@ The Style guide takes motivation from the following style manuals:
 - [The Oxford Style Manual](https://global.oup.com/academic/product/new-oxford-style-manual-9780198767251?cc=nl&lang=en&)
 - [The Microsoft Manual of Style](https://docs.microsoft.com/en-us/style-guide/welcome/)
 
+### Static-site generator
+
+The Wiki is built using [Docusaurus](https://docusaurus.io/), a static-site generator for
+building documentation sites in markdown. The Wiki follows the following metadata
+template for its markdown files and should be adpated for each new document:
+
+```
+---
+id: wiki-maintainers
+title: Wiki Maintainers
+sidebar_label: Maintainers
+description: A list of Polygon Wiki maintainers
+keywords:
+  - docs
+  - matic
+  - polygon
+  - wiki
+  - docs
+  - maintainers
+  - contributors
+image: https://matic.network/banners/matic-network-16x9.png
+slug: community-maintainers
+---
+```
+
+Please see the 
+[official metadata documentation](https://docusaurus.io/docs/next/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter) for more details.
+
 ### Share the experience with the reader
 
 - First Person: Do not use "I" or "me". Use the first person point of view sparingly and 
