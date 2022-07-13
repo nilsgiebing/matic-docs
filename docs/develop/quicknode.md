@@ -6,12 +6,19 @@ description:  Deploy Smart Contracts using Brownie and Quicknode.
 keywords:
   - docs
   - matic
+  - quicknode
+  - polygon
+  - python
+  - web3.py
+  - contract
 image: https://matic.network/banners/matic-network-16x9.png
 ---
 
-Python is one of the most versatile programming languages; from researchers running their test models to developers using it in heavy production environments, it has use cases in every possible technical field. This guide will walk you through the process of deploying smart contracts using [Brownie](https://eth-brownie.readthedocs.io/en/latest/index.html#brownie), a Python-based tool used to write and deploy smart contracts, and [QuickNode](https://www.quicknode.com/chains/matic?utm_source=polygon_docs&utm_campaign=ploygon_docs_contract_guide)
+## Overview
 
-**Prerequisites**
+Python is one of the most versatile programming languages; from researchers running their test models to developers using it in heavy production environments, it has use cases in every possible technical field. This guide will walk you through the process of deploying smart contracts using [Brownie](https://eth-brownie.readthedocs.io/en/latest/index.html#brownie), a Python-based tool used to write and deploy smart contracts, and [QuickNode](https://www.quicknode.com/chains/matic?utm_source=polygon_docs&utm_campaign=ploygon_docs_contract_guide).
+
+### Prerequisites
 
 -   Python3 installed.
 
@@ -21,6 +28,17 @@ Python is one of the most versatile programming languages; from researchers runn
 
 -   Command-line.
 
+## What you will learn
+
+- Use Brownie framework to develop and test a smart contract
+- Leverage Quicknode testnet nodes for Polygon.
+
+## What you will do
+
+1. Set up Brownie
+2. Get access to Quicknode test nodes
+3. Compile and Deploy a smart contract
+4. Check the deployed contract data.
 
 ## What is Brownie?
 -----------------
