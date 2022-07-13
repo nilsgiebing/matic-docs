@@ -9,19 +9,37 @@ keywords:
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
+## Overview
+
 This tutorial is for developers who are either new to Ethereum blockchain development or want to understand the fundamentals of deploying and interacting with smart contracts. It will walk through creating and deploying a smart contract on the Polygon Mumbai test network using a virtual wallet ([Metamask](https://metamask.io)), [Solidity](https://docs.soliditylang.org/en/v0.8.0/), [Hardhat](https://hardhat.org), and [Alchemy](https://alchemy.com/?a=polygon-docs).
 
 :::note
 
-If you have questions or concerns, please reach out to the [official Alchemy Discord] (https://discord.gg/gWuC7zB)](https://discord.gg/gWuC7zB).
+If you have questions or concerns, please reach out to the [<ins>official Alchemy Discord</ins>](https://discord.gg/gWuC7zB).
 
 :::
+
+## What you will learn
+To create a smart contract in this tutorial, you will learn how to use Alchemy's platform to:
+- create a smart contract application
+- check the wallet's balance
+- verify calls in the explorer. 
+
+## What you will do
+Following the tutorial, you will:
+1. Get started creating an app on Alchemy
+2. Create a wallet address with Metamask
+3. Add balance to the wallet
+4. Use Hardhat and Ethers.js to compile and deploy the project
+5. Check contract status on Alchemy's platform.
 
 ## Create and Deploy your Smart Contract using Hardhat
 
 ### Step 1: Connect to the Polygon network
 
 There are several ways to make requests to the Polygon PoS chain. Rather than running your own node, you will use a free account on Alchemy's developer platform and interact with the Alchemy Polygon PoS API to communicate with the Polygon PoS chain. The platform includes developer tooling to monitor requests and data analytics that demonstrate what happens under the hood during smart contract deployment. If you don’t already have an Alchemy account, start by signing up for free [here](https://alchemy.com/?a=polygon-docs).
+
+![img](/img/alchemy/alchemy-dashboard.png)
 
 :::note
 
@@ -36,6 +54,7 @@ After successfully creating an Alchemy account, you will need to generate an API
 
 To generate a new API key, navigate to the "Apps" tab on the Alchemy dashboard navigation bar and select the "Create App" sub-tab.
 
+![img](/img/alchemy/create-app.png)
 
 Name your new app “Hello World”, offer a short description, select "Polygon" for the chain, and choose “Polygon Mumbai” for your network.
 
@@ -45,7 +64,9 @@ Finally, click on “Create app”. Your new app should appear in the table belo
 
 Since Polygon PoS is a layer 2 scaling solution for Ethereum, we need to get an Ethereum wallet and add a custom Polygon URL to send and receive transactions on the Polygon Mumbai testnet. For this tutorial, we will use MetaMask, a browser-compatible digital wallet used to manage your wallet address. If you want to understand more about how transactions on Ethereum work, check out [this transactions guide](https://ethereum.org/en/developers/docs/transactions/) by the Ethereum Foundation.
 
-To get your customer Polygon RPC URL from Alchemy, go to your "Hello World" app in your Alchemy dashboard and click "View Key" in the top right corner. Then go ahead and copy your Alchemy HTTP API key!
+To get your customer Polygon RPC URL from Alchemy, go to your "Hello World" app in your Alchemy dashboard and click "View Key" in the top right corner. Then go ahead and copy your Alchemy HTTP API key.
+
+![img](/img/alchemy/view-key.png)
 
 You can download and create a Metamask account for free [here](https://metamask.io/download.html). Once you've created an account, follow these steps to set up the Polygon network on your wallet.
 
@@ -63,16 +84,21 @@ You can download and create a Metamask account for free [here](https://metamask.
     
     #### Block Explorer URL: https://mumbai.polygonscan.com/
 
+
+
 ### Step 4: Add Polygon Mumbai Test MATIC from a Faucet
 
 In order to deploy your smart contract to the test network, you need to obtain a few testnet tokens. To get testnet tokens, visit the [Polygon Mumbai Faucet](https://faucet.polygon.technology/), select "Mumbai", choose "MATIC Token", and enter your Polygon wallet address, then click “Submit.” It may take some time to receive your testnet tokens due to network traffic. 
-> At the time of writing, it took around 30 minutes.
+
+![img](/img/alchemy/faucet.png)
 
 You will see the testnet tokens in your MetaMask account soon after.
 
 ### Step 5: Check your Balance
 
-To double check our balance is there, let’s make an [eth\_getBalance](https://docs.alchemy.com/alchemy/apis/polygon-api/eth_getbalance) request using [Alchemy’s composer tool](https://composer.alchemyapi.io/). Select "Polygon" as the chain, "Polygon Mumbai" as the network, "eth_getBalance" as the method, and input your address. This will return the amount of MATIC in our wallet. Check out [this video](https://youtu.be/r6sjRxBZJuU) for instructions on how to use the composer tool!
+To double check our balance is there, let’s make an [eth\_getBalance](https://docs.alchemy.com/alchemy/apis/polygon-api/eth_getbalance) request using [Alchemy’s composer tool](https://composer.alchemyapi.io/). Select "Polygon" as the chain, "Polygon Mumbai" as the network, "eth_getBalance" as the method, and input your address. This will return the amount of MATIC in our wallet. Check out [this video](https://youtu.be/r6sjRxBZJuU) for instructions on how to use the composer tool.
+
+![img](/img/alchemy/get-balance.png)
 
 After you input your Metamask account address and click “Send Request”, you should see a response that looks like this:
 
@@ -86,7 +112,7 @@ This result is in Wei, not ETH. Wei is used as the smallest denomination of Ethe
 
 :::
 
-### Step 6: Initialize our project
+### Step 6: Initialize your project
 
 First, we’ll need to create a folder for our project. Navigate to your [command line](https://www.computerhope.com/jargon/c/commandi.htm) and type:
 
@@ -185,13 +211,13 @@ mkdir scripts
 * `contracts/` is where we’ll keep our hello world smart contract code file
 * `scripts/` is where we’ll keep scripts to deploy and interact with our contract
 
-### Step 10: Write our contract
+### Step 10: Write the contract
 
 Open up the hello-world project in your favorite editor, such as [VSCode](https://code.visualstudio.com). Smart contracts are written in a language called Solidity which is what we will use to write our HelloWorld.sol smart contract.‌
 
 :::tip
 
-For more information about Solidity, please visit [our guide](../home/blockchain-basics/basics-solidity).
+For more information about Solidity, please visit [<ins>our guide</ins>](../home/blockchain-basics/basics-solidity).
 
 :::
 
@@ -382,8 +408,12 @@ If we go to the [Polygon Mumbai explorer](https://mumbai.polygonscan.com/) and s
 
 The `From` address should match your Metamask account address and the To address will say “Contract Creation”. But if we click into the transaction, we’ll see our contract address in the `To` field:
 
-Congratulations! You just deployed a smart contract to the Polygon chain.
+![img](/img/alchemy/polygon-scan.png)
+
+**Congratulations! You just deployed a smart contract to the Polygon chain.**
 
 To understand what’s going on under the hood, let’s navigate to the Explorer tab in our [Alchemy dashboard](https://dashboard.alchemyapi.io/explorer). If you have multiple Alchemy apps make sure to filter by app and select “Hello World”.
+
+![img](/img/alchemy/calls.png)
 
 Here you’ll see a handful of JSON-RPC calls that Hardhat/Ethers made under the hood for us when we called the `.deploy()` function. Two important ones to call out here are [`eth_sendRawTransaction`](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth\_sendrawtransaction), which is the request to actually write our contract onto the Polygon chain, and [`eth_getTransactionByHash`](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth\_gettransactionbyhash) which is a request to read information about our transaction given the hash (a typical pattern when sending transactions).
