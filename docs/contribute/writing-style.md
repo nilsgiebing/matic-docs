@@ -72,8 +72,21 @@ slug: community-maintainers
 ---
 ```
 
+There are some important aspects to consider when writing the metadata for a markdown file:
+- We ask contributers to use a **unique id**, avoiding generic words or sentences like "Introduction" or "Overview". 
+- The **title** is the sentence used at the beginning of the article, "General Writing Guidelines" for this article. So, it is not necessary to add an H1/H2 header to introduce each article. Instead, use this **title** from the metadata.
+- The **description** can not be too lengthy, since it is used on the index tiles which has a limitation for the number of characters. The description "Blockchain is an immutable ledger for recording transactions" for the basics-blockchain.md will appear on an index tile as such: 
+![img](/img/contribute/index-tile.png)
+
+  The **description** then should have **up to 60 characters**, considering spaces between characters.
+- Keywords are important to increase SEO and contribute to improve search engine results. 5 to 7 words are enough to cover the most relevant words of the article.
+
+:::tip
+
 Please see the 
 [official metadata documentation](https://docusaurus.io/docs/next/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter) for more details.
+
+:::
 
 ### Share the experience with the reader
 
