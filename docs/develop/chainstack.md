@@ -1,6 +1,6 @@
 ---
 id: chainstack
-title: Using Chainstack
+title: Build a Smart Contract with Chainstack and Foundry on Polygon
 sidebar_label: Using Chainstack
 description:  Use Chainstack and Foundry to develop a Smart Contract.
 keywords:
@@ -9,18 +9,36 @@ keywords:
 image: https://matic.network/banners/matic-network-16x9.png
 ---
 
-# Hello World Smart Contract on Polygon
+## Overview 
 
 This section guides you through deploying a Hello World contract using [Chainstack](https://chainstack.com/build-better-with-polygon/) and [Foundry](https://github.com/gakonst/foundry/) on the Mumbai testnet.
+Chainstack provides infrasctructure for Ethereum-based applications and other blockchains. They maintain nodes and guarantee their connection to the network and also offer an interface to interact with mainnets and testnets.
 
-If you have any questions, reach out in the [Chainstack Discord](https://discord.com/invite/Cymtg2f7pX).
+Foundry is a fast toolkit for Ethereum application development written in Rust. It provides testing, interaction with EVM smart contracts, sending transactions and chain data retrieval.
+
+:::note
+
+If you have any questions, reach out in the [<ins>Chainstack Discord</ins>](https://discord.com/invite/Cymtg2f7pX).
+
+:::
+
+## What you will learn
+- Create a Hello World contract, using Chainstack to deploy a Polygon node and Foundry to deploy the contract.
+
+## What you will do
+1. Deploy a Polygon node using Chainstack
+2. Set up Foundry
+3. Create the smart contract
+4. Deploy the smart contract.
+
 
 ## Deploy a Polygon Mumbai Node
 
 You need a node to deploy a smart contract to the blockchain network, follow the steps to get your node:
 
 1. [Sign up with Chainstack](https://console.chainstack.com/user/account/create).
-1. [Deploy a Mumbai node](https://docs.chainstack.com/platform/join-a-public-network#join-a-polygon-pos-network).
+![img](/img/chainstack/sign-up.png)
+1. [Follow the instructions on how to deploy a Mumbai node](https://docs.chainstack.com/platform/join-a-public-network#join-a-polygon-pos-network).
 1. [Get the deployed node’s HTTPS endpoint](https://docs.chainstack.com/platform/view-node-access-and-credentials).
 
 ## Install Foundry
